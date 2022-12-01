@@ -1,25 +1,60 @@
-import logo from './logo.svg';
-import './App.css';
+/* eslint-disable no-unused-vars */
+import { React, useState } from 'react'
+import './App.css'
 
-function App() {
+const cellSize = 100
+
+function Cell({ value, rindex, cindex, handleClick }) {
+  const style = {
+    display: 'inline-block',
+    width: `${cellSize}px`,
+    height: `${cellSize}px`,
+    textAlign: 'center',
+    verticalAlign: 'bottom',
+    lineHeight: `${cellSize}px`,
+    fontSize: '72px'
+  }
+
+  const borderStyle = '1px solid black'
+  style.border = borderStyle
+  // TODO:  Apply to only the "middle" edges
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    // TODO: Add a click handler to recognize when an X or O placed.
+    <div className='cell' style={style}>
+      {value}
     </div>
-  );
+  )
 }
 
-export default App;
+function Board() {
+  // TODO Move this to a useState hook
+  const initialBoard = [['', '', ''], ['', '', ''], ['', '', '']]
+
+  const style = {
+    margin: '15px',
+    width: `${cellSize * 3 + 2}px`,
+    height: `${cellSize * 3 + 2}px`,
+    backgroundColor: 'lightgray'
+  }
+
+  return (
+    <div id='board' style={style}>
+      {/* TODO The code below only draws one cell.  Instead, iterate over the board and draw a 3x3 grid of cells.*/}
+      <Cell/>
+    </div>
+  )
+}
+
+function App() {
+  const message = 'Tell whose turn it is and/or if a space is occupied'
+  return (
+    <div>
+      <h1>Tic Tac Toe</h1>
+      <Board />
+      <span className='message'>{message}</span>
+    </div>
+  )
+}
+
+export default App
