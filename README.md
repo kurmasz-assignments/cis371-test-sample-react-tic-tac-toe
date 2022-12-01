@@ -1,6 +1,6 @@
-Begin by running `npm install`
+Begin by running `npm install`.
 
-Then, when you run `npm start` you will see this empty table with two buttons:
+Then, when you run `npm start` you will see this empty Tic Tac Toe board:
 
 <img src='emptyBoard.png' width="350px">
 
@@ -8,7 +8,7 @@ Edit `src/App.js` so you can place Xs and Os.  Among other things, you'll need t
 
 1. Populate the board with a 3x3 grid of `Cell`s.
 2. Add `useState` hooks for the board contents and the current player turn.
-3. Add click handlers to the cells that place Xs and Os
+3. Add click handlers to the cells that place Xs and Os.
 
 As you do this:
 
