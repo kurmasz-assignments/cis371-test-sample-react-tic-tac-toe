@@ -4,7 +4,7 @@ import './App.css'
 
 const cellSize = 100
 
-function Cell({ value, rindex, cindex, handleClick }) {
+function Cell({ value, rindex, cindex }) {
   const style = {
     display: 'inline-block',
     width: `${cellSize}px`,
@@ -16,7 +16,7 @@ function Cell({ value, rindex, cindex, handleClick }) {
   }
 
   const borderStyle = '1px solid black'
-  style.border = borderStyle
+  style.borderTop = borderStyle
   // TODO:  Apply to only the "middle" edges
 
   return (
